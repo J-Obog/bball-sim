@@ -1,10 +1,15 @@
-from stats import Stats
+from bball.player import Player
+from bball.stats import Stats
+import json
 
 class Team:
     def __init__(self, name, colors, players):
         self.name = name
-        self.players = players
+        self.colors = colors
+        self.players = []
         self.stats = Stats()
-        #ratings
-        self.colors = []
-        self.lineScore = []
+
+    @classmethod
+    def loadFromFile(path):
+        pass
+        #return Team()

@@ -1,0 +1,19 @@
+{
+    "name": "56ers",
+    "colors": [0,0],
+    "players": [
+        {
+            "name": "John Doe",
+            "pos": 0,
+            "3p": 25,
+            "2p": 25,
+            "ft": 25,
+            "ast": 25,
+            "reb": 25,
+            "tov": 25,
+            "blk": 25,
+            "stl": 25,
+            "fl": 25
+        }
+    ]
+}
