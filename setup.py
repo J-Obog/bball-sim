@@ -1,8 +1,5 @@
 from setuptools import setup, find_packages
 
-pkgs = find_packages()
-print(pkgs)
-
 setup(
     name='bball',
     version='1.0',
@@ -11,6 +8,5 @@ setup(
     author='JObog',
     author_email='jobogbaimhe@gmail.com',
     license='MIT',
-    packages=pkgs,
-    zip_safe=False
+    packages=find_packages(exclude=['examples', 'tests'])
 )
