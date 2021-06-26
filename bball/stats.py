@@ -24,21 +24,3 @@ class Stats:
 
     def freeThrowPct(self):
         return self.ft/float(self.fta)
-
-    def __str__(self):
-        return (
-            f"MP: {self.mins} | "
-            f"FG: {self.fg} | "
-            f"FGA: {self.fga} | " 
-            f"3P: {self._3p} | " 
-            f"3PA: {self._3pa} | " 
-            f"FT: {self.ft} | " 
-            f"FTA: {self.fta} | " 
-            f"REB: {self.reb} | " 
-            f"AST: {self.ast} | " 
-            f"STL: {self.stl} | "
-            f"BLK: {self.blk} | " 
-            f"TOV: {self.tov} | "
-            f"PF: {self.fl} | " 
-            f"PTS: {self.pts}"
-        )
