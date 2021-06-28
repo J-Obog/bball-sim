@@ -7,6 +7,7 @@ class Team:
         self.name = name
         self.colors = colors
         self.players = players
+        self.on_court = [player for player in self.players[:5]]
         self.stats = Stats()
 
     @staticmethod
@@ -18,19 +19,20 @@ class Team:
         for player in data['players']:
             players.append(
                 Player(
-                    player['name'],
-                    player["pos"],
-                    player["3p"],
-                    player["2p"],
-                    player["ft"],
-                    player["ast"],
-                    player["reb"],
-                    player["tov"],
-                    player["blk"],
-                    player["stl"],
-                    player["fl"]
+                    name = player["name"], 
+                    pos = player["pos"], 
+                    _3p = player["3p"], 
+                    _2p = player["2p"], 
+                    ft = player["ft"], 
+                    ast = player["ast"], 
+                    reb = player["reb"], 
+                    tov = player["tov"], 
+                    blk = player["blk"], 
+                    stl = player["stl"], 
+                    fl = player["fl"]
                 )
             )
             
         file.close()
         return Team(data['name'], data['colors'], players)
+        

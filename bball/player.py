@@ -8,7 +8,7 @@ class Player:
         self._3p = _3p
         self._2p = _2p
         self.ft = ft
-        self.ast = ast
+        self.ast = ast 
         self.reb = reb
         self.tov = tov
         self.blk = blk
@@ -25,3 +25,6 @@ class Player:
 
     def defensiveRating(self):
         return 0
+
+    def tripleThreat(self): 
+        pass 

@@ -1,1 +1,0 @@
-python -m bball.sim_match -t examples/teams.json
