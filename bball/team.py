@@ -10,8 +10,9 @@ class Team:
         self.on_court = [player for player in self.players[:5]]
         self.stats = Stats()
 
+ 
     @staticmethod
-    def loadFromFile(path):
+    def load_from_file(path):
         players = []
         file = open(path)
         data = json.load(file)
