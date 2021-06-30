@@ -1,39 +1,22 @@
 from bball.player import Player
-from bball.stats import Stats
-import json
+import csv
 
 class Team:
-    def __init__(self, name, colors, players):
+    def __init__(self, name, players):
         self.name = name
-        self.colors = colors
         self.players = players
-        self.on_court = [player for player in self.players[:5]]
-        self.stats = Stats()
+        self.on_court = self.players[:5]
 
- 
+    def sum_stats(self, stat):
+        return sum([p.stats[stat] for p in self.players]) 
+
     @staticmethod
-    def load_from_file(path):
+    def from_file(path):
         players = []
-        file = open(path)
-        data = json.load(file)
-
-        for player in data['players']:
-            players.append(
-                Player(
-                    name = player["name"], 
-                    pos = player["pos"], 
-                    _3p = player["3p"], 
-                    _2p = player["2p"], 
-                    ft = player["ft"], 
-                    ast = player["ast"], 
-                    reb = player["reb"], 
-                    tov = player["tov"], 
-                    blk = player["blk"], 
-                    stl = player["stl"], 
-                    fl = player["fl"]
+        with open(path) as csv_file:
+            csv_data = csv.reader(csv_file)
+            for r in csv_data:
+                players.append(
+                    Player(r[0], int(r[1]), list(map(int, r[2:])))
                 )
-            )
-            
-        file.close()
-        return Team(data['name'], data['colors'], players)
-        
+        return Team(path[:-4], players)

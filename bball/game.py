@@ -7,7 +7,7 @@ class Game:
         self.teams = teams
         
     def run(self):
-        pass
+        pass 
 
     def save(self, path):
         pass 

@@ -13,8 +13,8 @@ def main():
     args = argp.parse_args()
 
     """Configuring sim classes"""
-    team_a = Team.load_from_file(args.team_a)
-    team_b = Team.load_from_file(args.team_b)
+    team_a = Team.from_file(args.team_a)
+    team_b = Team.from_file(args.team_b)
     simulation = Game([team_a, team_b], args.location)
     simulation.run()
 
